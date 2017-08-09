@@ -2,10 +2,12 @@
 
 namespace Api;
 
+use \Yaf_Dispatcher;
+
 class Common extends \Yaf_Controller_Abstract
 {
     public function init()
     {
-        echo 'inital';
+        Yaf_Dispatcher::getInstance()->disableView();
     }
 }

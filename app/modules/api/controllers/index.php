@@ -14,6 +14,6 @@ class IndexController extends \Api\Common
         echo '这是api的test方法';
         //CommonController::echoCommon();
         //echo $this->getCommon();
-        return false;
+        //return false;
     }
 }
