@@ -2,7 +2,7 @@
 
 
 
-class IndexController extends \Api\Common
+class IndexController extends \Core\ApiAbstract
 {
     public function indexAction()
     {
@@ -11,9 +11,11 @@ class IndexController extends \Api\Common
 
     public function testAction()
     {
+        //$_SESSION['test'] = 5;
+        //echo $_SESSION['test'];
         echo '这是api的test方法';
-        //CommonController::echoCommon();
-        //echo $this->getCommon();
-        //return false;
+        echo '<hr/>';
+        echo 'current action is:'.$this->getRequest()->getActionName();
+    
     }
 }

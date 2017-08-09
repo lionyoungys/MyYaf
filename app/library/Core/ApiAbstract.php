@@ -1,13 +1,14 @@
 <?php
 
-namespace Api;
+namespace Core;
 
 use \Yaf_Dispatcher;
 
-class Common extends \Yaf_Controller_Abstract
+abstract class ApiAbstract extends CommonAbstract
 {
     public function init()
     {
+        //对象初始化调用
         Yaf_Dispatcher::getInstance()->disableView();
     }
 }
