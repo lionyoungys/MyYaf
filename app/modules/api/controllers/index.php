@@ -1,9 +1,8 @@
 <?php
 
-use Api\Controllers;
 
 
-class IndexController extends CommonController
+class IndexController extends \Api\Common
 {
     public function indexAction()
     {
@@ -13,7 +12,8 @@ class IndexController extends CommonController
     public function testAction()
     {
         echo '这是api的test方法';
-        echo $this->getCommon();
+        //CommonController::echoCommon();
+        //echo $this->getCommon();
         return false;
     }
 }
