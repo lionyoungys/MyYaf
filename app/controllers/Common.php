@@ -5,7 +5,7 @@
  * @desc 公共控制器
  */
 
-class CommonController extends Yaf_Controller_Abstract
+class CommonController extends \Core\IndexAbstract
 {
     
 }
