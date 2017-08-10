@@ -15,4 +15,9 @@ class SampleModel {
     public function insertSample($arrInfo) {
         return true;
     }
+
+    public static function the()
+    {
+        var_dump(__CLASS__);
+    }
 }
