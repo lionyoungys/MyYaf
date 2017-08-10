@@ -11,14 +11,17 @@ class IndexController extends \Core\ApiAbstract
 
     public function testAction()
     {
-        $user = DB()->select('user','*',['id[!]'=>2]);
+        //$user = DB()->select('User','*',['id[!]'=>2]);
+        //echo '<pre>';
+        //var_dump($user);
+        //var_dump(json_encode($user));
+        //SampleModel::the();
+        //echo '这是api的test方法';
+        //echo '<hr/>';
+        //echo 'current action is:'.$this->getRequest()->getActionName();
+        UserModel::select('*',['id[!]'=>2]);
         echo '<pre>';
-        var_dump($user);
-        var_dump(json_encode($user));
-        SampleModel::the();
-        echo '这是api的test方法';
-        echo '<hr/>';
-        echo 'current action is:'.$this->getRequest()->getActionName();
+       // var_dump($array);
 
     }
 }
