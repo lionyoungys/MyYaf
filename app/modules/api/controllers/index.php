@@ -19,9 +19,9 @@ class IndexController extends \Core\ApiAbstract
         //echo '这是api的test方法';
         //echo '<hr/>';
         //echo 'current action is:'.$this->getRequest()->getActionName();
-        UserModel::select('*',['id[!]'=>2]);
+        $users = UserModel::select('*',['id[!]'=>2]);
         echo '<pre>';
-       // var_dump($array);
+        var_dump($users);
 
     }
 }
