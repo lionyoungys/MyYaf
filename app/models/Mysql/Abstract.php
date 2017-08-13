@@ -1,10 +1,14 @@
 <?php
-namespace Mysql;
 /**
  * Mysql主数据访问抽象模型
  * @package Mysql
  * @author 帅
  */
+namespace Mysql;
+
+
+use Tool\Tool;
+
 abstract class AbstractModel {
 
     //禁止克隆类
@@ -27,18 +31,6 @@ abstract class AbstractModel {
         return $_instance;
     }
 
-    /**
-     * 去除类名中的命名空间
-     *
-     * @param string $name
-     * @return string
-     */
-    protected static function trimNamespace($name)
-    {
-        $dataArr = explode('\\',$name);
-        $realName = array_pop($dataArr);
-        return $realName;
-    }
 
     /**
      * 映射模型静态方法
@@ -49,7 +41,7 @@ abstract class AbstractModel {
      */
     public static function __callStatic($name, $args)
     {
-        $realModelName = self::trimNamespace(get_called_class());
+        $realModelName = Tool::trimNamespace(get_called_class());
         $Model = str_replace('Model','',$realModelName);     //获取模型类名对应数据表名
         array_unshift($args, $Model);                            //将数据表名追加至参数列表数组
         return call_user_func_array(array(self::_getAdapter(),$name),$args);    //调用DB数据库对象的$name方法,参数为$args数组列表值

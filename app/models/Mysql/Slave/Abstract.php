@@ -1,11 +1,15 @@
 <?php
-namespace Mysql\Slave;
 /**
  * Mysql从数据访问抽象模型
  * @package Mysql
  * @author 帅
  */
-abstract class AbstractModel extends \Mysql\AbstractModel {
+namespace Mysql\Slave;
+
+
+use Tool\Tool;
+abstract class AbstractModel
+{
     /**
      * 获取数据库连接对象
      *
@@ -33,7 +37,7 @@ abstract class AbstractModel extends \Mysql\AbstractModel {
      */
     public static function __callStatic($name, $args)
     {
-        $realModelName = self::trimNamespace(get_called_class());
+        $realModelName = Tool::trimNamespace(get_called_class());
         $Model = str_replace('Model','',$realModelName);     //获取模型类名对应数据表名
         array_unshift($args, $Model);                            //将数据表名追加至参数列表数组
         return call_user_func_array(array(self::_getAdapter(),$name),$args);    //调用DB数据库对象的$name方法,参数为$args数组列表值
