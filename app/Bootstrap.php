@@ -34,7 +34,7 @@ class Bootstrap extends Yaf_Bootstrap_Abstract {
 	public function _initLoader(Yaf_Dispatcher $dispatcher) {
           //Yaf_Loader::getInstance()->registerLocalNameSpace(array("Foo", "Bar"));
 		  Yaf_Loader::import(APPLICATION_PATH . '/vendor/autoload.php');
-		  Yaf_Loader::import(FUNCTIONS_PATH . 'function.php');
+		  Yaf_Loader::import(FUNCTIONS_PATH . 'functions.php');
 		  Yaf_Loader::import(FUNCTIONS_PATH . 'DB.php');
     }
 }
