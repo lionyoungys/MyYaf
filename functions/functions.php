@@ -18,3 +18,10 @@ function trimNamespace($name)
     $realName = array_pop($dataArr);
     return $realName;
 }
+
+
+function test(){
+    for($i = 0; $i < 5;++$i) {
+        yield $i;
+    }
+}

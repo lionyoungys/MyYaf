@@ -21,6 +21,14 @@ class IndexController extends \Core\ApiAbstract
         //$users = UserModel::select('*',['id[!]'=>2]);
         echo '<pre>';
         var_dump($users);
+        //goto end;
+        echo 'not go to';
+
+        //end:
+        echo 'dfd';
+        $dataArr = test();
+        echo '<hr>';
+        echo json_encode($dataArr,TRUE);
 
     }
 }
