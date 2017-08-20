@@ -26,9 +26,10 @@ class IndexController extends \Core\ApiAbstract
 
         //end:
         echo 'dfd';
-        $dataArr = test();
+        //$dataArr = test();
         echo '<hr>';
-        echo json_encode($dataArr,TRUE);
+        //echo json_encode($dataArr,TRUE);
+        print_r($_SERVER);
 
     }
 }
